@@ -5,13 +5,18 @@ using TMPro;
 
 public class HUD : MonoBehaviour
 {
+    public GameObject player;
     public TextMeshProUGUI puntos;
     public GameObject[] vidas;
     private int Vidas = 4;
 
     void Update()
     {
-        puntos.text = GameManager.Instance.PuntosTotales.ToString();
+        if(puntos != null)
+        {
+            puntos.text = GameManager.Instance.PuntosTotales.ToString();
+        }
+        
     }
 
     public void ActualizarPuntos(int puntosTotales)
@@ -33,5 +38,17 @@ public class HUD : MonoBehaviour
     {
         Vidas -= 1;
         DesactivarVida(Vidas);
+
+        if (Vidas <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        // Aquí puedes agregar cualquier acción que desees realizar al perder todas las vidas.
+        // Por ejemplo, desactivar el personaje o mostrar un mensaje de game over.
+        player.SetActive(false);
     }
 }
