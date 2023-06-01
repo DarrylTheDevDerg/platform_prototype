@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2640562669669339085}
-  - component: {fileID: 2640562669669339084}
   - component: {fileID: 2640562669669339122}
   m_Layer: 0
   m_Name: PauseManager
@@ -34,19 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2640562669669339084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2640562669669339087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd56da148b5c5294d87c4957f506c1ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 4766131464648460359, guid: 1e6fe47086321ef4b957d8a9e63cbf14, type: 3}
 --- !u!114 &2640562669669339122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,10 +50,10 @@ MonoBehaviour:
   customActions:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9054081434374142616}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -212,10 +198,5 @@ MonoBehaviour:
 --- !u!224 &2332607398406762321 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2296037948346391950, guid: 1e6fe47086321ef4b957d8a9e63cbf14, type: 3}
-  m_PrefabInstance: {fileID: 4576286454123819743}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &9054081434374142616 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4766131464648460359, guid: 1e6fe47086321ef4b957d8a9e63cbf14, type: 3}
   m_PrefabInstance: {fileID: 4576286454123819743}
   m_PrefabAsset: {fileID: 0}
