@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
@@ -50,5 +49,6 @@ public class HUD : MonoBehaviour
         // Aquí puedes agregar cualquier acción que desees realizar al perder todas las vidas.
         // Por ejemplo, desactivar el personaje o mostrar un mensaje de game over.
         player.SetActive(false);
+        SceneManager.LoadScene(sceneName: "Game Over");
     }
 }

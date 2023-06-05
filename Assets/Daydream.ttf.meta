@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 98532ccc4934b084384e436ec156f1a6
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Daydream
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0918a063e997be84cb8fb765e7e83919, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

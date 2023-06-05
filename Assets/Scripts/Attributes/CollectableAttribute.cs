@@ -1,44 +1,53 @@
 ﻿using UnityEngine;
-using System.Collections;
+using TMPro;
 
 [AddComponentMenu("Playground/Attributes/Collectable")]
 public class CollectableAttribute : MonoBehaviour
 {
-	public int pointsWorth = 1;
-	
-	private UIScript userInterface;
+    private static int points = 0;
+    private static TextMeshProUGUI counterText;
 
-	private void Start()
-	{
-		// Find the UI in the scene and store a reference for later use
-		userInterface = GameObject.FindObjectOfType<UIScript>();
-	}
+    public AudioClip collectSound; // Agrega el AudioClip para el sonido de recolección
 
+    private void Start()
+    {
+        if (counterText == null)
+        {
+            counterText = FindObjectOfType<TextMeshProUGUI>();
+        }
+    }
 
-	//This will create a dialog window asking for which dialog to add
-	private void Reset()
-	{
-		Utils.Collider2DDialogWindow(this.gameObject, true);
-	}
+    // This will create a dialog window asking for which dialog to add
+    private void Reset()
+    {
+        Utils.Collider2DDialogWindow(this.gameObject, true);
+    }
 
+    // This function gets called every time this object collides with another
+    private void OnTriggerEnter2D(Collider2D otherCollider)
+    {
+        string playerTag = otherCollider.gameObject.tag;
 
-	// This function gets called everytime this object collides with another
-	private void OnTriggerEnter2D(Collider2D otherCollider)
-	{
-		string playerTag = otherCollider.gameObject.tag;
+        // Is the other object a player?
+        if (playerTag == "Player" || playerTag == "Player2")
+        {
+            // Play the collect sound
+            if (collectSound != null)
+            {
+                AudioSource.PlayClipAtPoint(collectSound, transform.position);
+            }
 
-		// is the other object a player?
-		if(playerTag == "Player" || playerTag == "Player2")
-		{
-			if(userInterface != null)
-			{
-				// add one point
-				int playerId = (playerTag == "Player") ? 0 : 1;
-				userInterface.AddPoints(playerId, pointsWorth);
-			}
+            // Increment the global points counter
+            points++;
 
-			// then destroy this object
-			Destroy(gameObject);
-		}
-	}
+            // Update the counter text
+            if (counterText != null)
+            {
+                counterText.text = "Coin: " + points.ToString();
+            }
+
+            // Destroy this object
+            Destroy(gameObject);
+        }
+    }
 }

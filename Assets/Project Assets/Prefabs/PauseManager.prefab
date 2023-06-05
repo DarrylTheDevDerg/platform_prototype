@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2640562669669339085}
-  - component: {fileID: 2640562669669339122}
+  - component: {fileID: -6482133362865980417}
   m_Layer: 0
   m_Name: PauseManager
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2640562669669339122
+--- !u!114 &-6482133362865980417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,32 +42,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2640562669669339087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ddb73e2f0dc401ebfb23c7b6e72fa5, type: 3}
+  m_Script: {fileID: 11500000, guid: fd56da148b5c5294d87c4957f506c1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions: []
-  useCustomActions: 1
-  customActions:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: PauseGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  happenOnlyOnce: 0
-  filterByTag: 0
-  filterTag: Player
-  keyToPress: 27
-  eventType: 0
-  frequency: 0.5
+  pauseMenu: {fileID: 4766131464648460359, guid: 1e6fe47086321ef4b957d8a9e63cbf14, type: 3}
 --- !u!1001 &4576286454123819743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75,6 +53,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2640562669669339085}
     m_Modifications:
+    - target: {fileID: 1236927731883400216, guid: 1e6fe47086321ef4b957d8a9e63cbf14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -6482133362865980417}
     - target: {fileID: 2296037948346391950, guid: 1e6fe47086321ef4b957d8a9e63cbf14, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -175,26 +157,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5306229814264775507, guid: 1e6fe47086321ef4b957d8a9e63cbf14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -6482133362865980417}
+    - target: {fileID: 8658271010284223380, guid: 1e6fe47086321ef4b957d8a9e63cbf14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -6482133362865980417}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e6fe47086321ef4b957d8a9e63cbf14, type: 3}
---- !u!1 &1279773977483249276 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3332830773800006819, guid: 1e6fe47086321ef4b957d8a9e63cbf14, type: 3}
-  m_PrefabInstance: {fileID: 4576286454123819743}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8395485791244420804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279773977483249276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe2d01f36b24b4a098b250d65a68a92f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelName: 0
 --- !u!224 &2332607398406762321 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2296037948346391950, guid: 1e6fe47086321ef4b957d8a9e63cbf14, type: 3}

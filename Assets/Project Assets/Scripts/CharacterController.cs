@@ -1,8 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
     public int maxLives = 4;
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
     private int currentLives;
 
     private void Start()
@@ -23,10 +28,5 @@ public class CharacterController : MonoBehaviour
         currentLives--;
     }
 
-    private void Die()
-    {
-        // Aquí puedes agregar cualquier acción que desees realizar al perder todas las vidas.
-        // Por ejemplo, desactivar el personaje o mostrar un mensaje de game over.
-        gameObject.SetActive(false);
-    }
+    private void Die() => SceneManager.LoadScene(sceneName: "Game Over");
 }
